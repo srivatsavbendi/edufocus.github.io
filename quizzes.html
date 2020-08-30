@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+      <title>Quizzes</title>
+      <link rel="stylesheet" href="quizStyles.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+      <script src="config.js"></script>
+	</head>
+
+	<style>
+		body {
+  			font-family: "comfortaa";
+		}
+	</style>
+	<body>
+<!--
+		<div id=navbar>	
+			<a href="index.html"><span class=title><img id=logo src="Pictures/PROJECTFUTURE1.png"></span></a>
+			<a href="clubs.html"><span class=title>Clubs</span></a>
+			<a href="sat.html"><span class=title>SAT</span></a>
+			<a href="act.html"><span class=title>ACT</span></a>
+			<a href="programs.html"><span class=title>Programs</span></a>
+			<span class=title1>Forum</span>
+			<span id=login>Login</span>
+			<button id="signup">Sign Up</button>
+		</div>
+-->
+		
+		<div id=logoscreen>
+			<p id=logoname>Advanced Physics- Mount Richmond High School</p>
+		</div>
+
+		<div id=screens>
+			<div id=leftscreen>
+				<img class=mentorimage src="physics.jpg">
+				<h1 class=mentorname>Professor Tom</h1>
+
+				<a href="index.html"><div class=leftnav>
+					<h1 class=leftnavname>Students</h1>
+				</div></a>
+				<a href="quizzes.html"><div class=leftnav1>
+					<h1 class=leftnav1name>Manage Quizzes</h1>
+				</div></a>
+				<a href="results.html"><div class=leftnav2>
+					<h1 class=leftnav2name>Analyze Results</h1>
+				</div></a>
+				<a href="analytics.html"><div class=leftnav2>
+					<h1 class=leftnav2name>Attentiveness</h1>
+				</div></a>
+			</div>
+
+			<div id=rightscreen>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 1</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question1" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice1" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA1" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB1" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC1" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD1" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 2</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question2" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice2" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA2" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB2" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC2" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD2" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 3</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question3" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice3" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA3" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB3" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC3" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD3" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 4</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question4" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice4" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA4" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB4" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC4" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD4" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 5</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question5" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice5" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA5" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB5" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC5" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD5" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 6</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question6" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice6" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA6" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB6" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC6" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD6" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 7</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question7" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice7" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA7" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB7" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC7" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD7" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 8</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question8" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice8" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA8" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB8" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC8" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD8" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 9</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question9" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice9" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA9" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB9" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC9" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD9" placeholder="Choice D">
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div class=row1 style="background-color: #EDFFEC">
+						<h1 class=rowname>Question 10</h1>
+					</div>
+					<div class=row2 style="background-color: #EDFFEC">
+						<input size="83" type="text" id="question10" placeholder="What is Gravity?">
+						<input size="3" type="text" id="correctchoice10" placeholder="Correct">
+					</div>
+					<div class=row3 style="background-color: #EDFFEC">
+						<input size="13" type="text" id="choiceA10" placeholder="Choice A">
+						<input size="13" type="text" id="choiceB10" placeholder="Choice B">
+						<input size="13" type="text" id="choiceC10" placeholder="Choice C">
+						<input size="13" type="text" id="choiceD10" placeholder="Choice D">
+					</div>
+				</div>
+				<div id=beginnext>
+					<button id=button>Publish Quiz</button>
+					<input size="3" type="text" id="questionnumber" placeholder="#">
+					<button id=display>Display #</button>
+				</div>
+			</div>
+		</div>
+
+	</body>
+    <script src="script.js"></script>
+</html>
