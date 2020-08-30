@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+      <title>Attention</title>
+      <link rel="stylesheet" href="analytics.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+      <script src="config.js"></script>
+	</head>
+
+	<style>
+		body {
+  			font-family: "comfortaa";
+		}
+	</style>
+	<body>
+<!--
+		<div id=navbar>	
+			<a href="index.html"><span class=title><img id=logo src="Pictures/PROJECTFUTURE1.png"></span></a>
+			<a href="clubs.html"><span class=title>Clubs</span></a>
+			<a href="sat.html"><span class=title>SAT</span></a>
+			<a href="act.html"><span class=title>ACT</span></a>
+			<a href="programs.html"><span class=title>Programs</span></a>
+			<span class=title1>Forum</span>
+			<span id=login>Login</span>
+			<button id="signup">Sign Up</button>
+		</div>
+-->
+		
+		<div id=logoscreen>
+			<p id=logoname>Advanced Physics- Mount Richmond High School</p>
+		</div>
+
+		<div id=screens>
+			<div id=leftscreen>
+				<img class=mentorimage src="physics.jpg">
+				<h1 class=mentorname>Professor Tom</h1>
+
+				<a href="index.html"><div class=leftnav>
+					<h1 class=leftnavname>Students</h1>
+				</div></a>
+				<a href="quizzes.html"><div class=leftnav1>
+					<h1 class=leftnav1name>Manage Quizzes</h1>
+				</div></a>
+				<a href="results.html"><div class=leftnav1>
+					<h1 class=leftnav1name>Analyze Results</h1>
+				</div></a>
+				<a href="analytics.html"><div class=leftnav2>
+					<h1 class=leftnav2name>Attentiveness</h1>
+				</div></a>
+			</div>
+
+			<div id=rightscreen>
+				<div class=rows style="background-color: #EDFFEC">
+					<div id=square1 style="background-color: #3E8989">
+						<div id=resultsDiv1>
+							<h1 id=resultsheader1></h1>
+						</div>
+						<p>Dan</p>
+					</div>
+					<div id=square2 style="background-color: #3E8989">
+						<div id=resultsDiv2>
+							<h1 id=resultsheader2></h1>
+						</div>
+						<p>Ashley</p>
+					</div>
+					<div id=square3 style="background-color: #3E8989">
+						<div id=resultsDiv3>
+							<h1 id=resultsheader3></h1>
+						</div>
+						<p>Sara</p>
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div id=square4 style="background-color: #3E8989">
+						<div id=resultsDiv4>
+							<h1 id=resultsheader4></h1>
+						</div>
+						<p>Carrie</p>
+					</div>
+					<div id=square5 style="background-color: #3E8989">
+						<div id=resultsDiv5>
+							<h1 id=resultsheader5></h1>
+						</div>
+						<p>Jennifer</p>
+					</div>
+					<div id=square6 style="background-color: #3E8989">
+						<div id=resultsDiv6>
+							<h1 id=resultsheader6></h1>
+						</div>
+						<p>Timothy</p>
+					</div>
+				</div>
+				<div class=rows style="background-color: #EDFFEC">
+					<div id=square7 style="background-color: #3E8989">
+						<div id=resultsDiv7>
+							<h1 id=resultsheader7></h1>
+						</div>
+						<p>Donna</p>
+					</div>
+					<div id=square8 style="background-color: #3E8989">
+						<div id=resultsDiv8>
+							<h1 id=resultsheader8></h1>
+						</div>
+						<p>Jack</p>
+					</div>
+					<div id=square9 style="background-color: #3E8989">
+						<div id=resultsDiv9>
+							<h1 id=resultsheader9></h1>
+						</div>
+						<p>Edward</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+    <script src="analytics.js"></script>
+</html>
